@@ -7,7 +7,7 @@ void swap(T& element1, T& element2)
 }
 
 template<typename T>
-void bubbleSort(T*& ptr_in_arr, const int& size)
+void bubbleSort(T*& arr, const int& size)
 {
     bool sorted = false;
 
@@ -16,10 +16,10 @@ void bubbleSort(T*& ptr_in_arr, const int& size)
         sorted = true;
         for (int index = 0; index < size - pass; ++index)
         {
-            int next_index = index + 1;
-            if (ptr_in_arr[index] > ptr_in_arr[next_index])
+            int nextIndex = index + 1;
+            if (arr[index] > arr[nextIndex])
             {
-                swap(ptr_in_arr[index], ptr_in_arr[next_index]);
+                swap(arr[index], arr[nextIndex]);
                 sorted = false;
             }
         }

@@ -6,9 +6,9 @@
 int main()
 {
 
-  std::vector<int> vec1{1, 2, 3, 4, 5, 6, 7, 8, 9};
+  std::vector<int> vec{1, 2, 3, 4, 5, 6, 7, 8, 9};
   
-  auto it = vec1.begin() + 2;
+  auto it = vec.begin() + 2;
   
   std::cout << *it << std::endl;
   

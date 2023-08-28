@@ -7,20 +7,20 @@ void swap(T& element1, T& element2)
 }
 
 template<typename T>
-void selectionSort(T*& ptr_in_arr, const int& size)
+void selectionSort(T*& arr, const int& size)
 {
     for (int last = size - 1; last >= 1; --last)
     {
       
-        int min_idx = last;
+        int minIndex = last;
         for (int j = last - 1; j >= 0; --j)
         {
-            if (ptr_in_arr[j] > ptr_in_arr[min_idx])
+            if (arr[j] > arr[minIndex])
             {
-                min_idx = j;
+                minIndex = j;
             }
         }
-        swap(ptr_in_arr[min_idx], ptr_in_arr[last]);
+        swap(arr[minIndex], arr[last]);
        
     } 
 }

@@ -1,5 +1,5 @@
 template<typename T>
-void merge(T*& ptr_in_arr, int& first, int& mid, int& last)
+void merge(T*& arr, int& first, int& mid, int& last)
 {
     T temp[size]{0};
 
@@ -12,42 +12,42 @@ void merge(T*& ptr_in_arr, int& first, int& mid, int& last)
 
     for (; (first1 <= last1) && (first2 <= last2); ++index)
     {
-        if (ptr_in_arr[first1] < ptr_in_arr[first2])
+        if (arr[first1] < arr[first2])
         {
-            temp[index] = ptr_in_arr[first1];
+            temp[index] = arr[first1];
             ++first1;
         }
         else
         {
-            temp[index] = ptr_in_arr[first2];
+            temp[index] = arr[first2];
             ++first2;
         }
     }
 
     for (; first1 <= last1; ++first1, ++index)
     {
-        temp[index] = ptr_in_arr[first1];
+        temp[index] = arr[first1];
     }
 
     for (; first2 <= last2; ++first2, ++index)
     {
-        temp[index] = ptr_in_arr[first2];
+        temp[index] = arr[first2];
     }
 
     for (index = first; index <= last; ++index)
     {
-        ptr_in_arr[index] = temp[index];
+        arr[index] = temp[index];
     }
 
 }
 template<typename T>
-void mergeSort(T*& ptr_in_arr, int first, int last)
+void mergeSort(T*& arr, int first, int last)
 {
     if (first < last)
     {
         int mid = (first + last) / 2;
-        mergeSort(ptr_in_arr, first, mid);
-        mergeSort(ptr_in_arr, mid + 1, last);
-        merge(ptr_in_arr, first, mid, last);
+        mergeSort(arr, first, mid);
+        mergeSort(arr, mid + 1, last);
+        merge(arr, first, mid, last);
     }
 }
